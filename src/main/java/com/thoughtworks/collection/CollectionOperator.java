@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
-        throw new NotImplementedException();
+        if()
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
