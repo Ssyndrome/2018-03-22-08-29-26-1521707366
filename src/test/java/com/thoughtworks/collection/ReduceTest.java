@@ -60,22 +60,22 @@ public class ReduceTest {
         assertThat(evenReduce.getOrderedMedian()).isEqualTo(1.5);
     }
 
-    @Test
-    public void should_get_element_in_middle_position_in_linkList() {
-    //获取单链表中的中位数
-        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19, 30};
-        List<Integer> arrayList = Arrays.asList(array);
-
-        SingleLink<Integer> singleLink = mock(SingleLink.class);
-        when(singleLink.getNode(6)).thenReturn(10);
-        when(singleLink.getNode(7)).thenReturn(9);
-
-        Reduce reduce = new Reduce(arrayList);
-
-        assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(9.5);
-        verify(singleLink, times(12)).addTailPointer(anyInt());
-
-    }
+//    @Test
+//    public void should_get_element_in_middle_position_in_linkList() {
+//    //获取单链表中的中位数
+//        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19, 30};
+//        List<Integer> arrayList = Arrays.asList(array);
+//
+//        SingleLink<Integer> singleLink = mock(SingleLink.class);
+//        when(singleLink.getNode(6)).thenReturn(10);
+//        when(singleLink.getNode(7)).thenReturn(9);
+//
+//        Reduce reduce = new Reduce(arrayList);
+//
+//        assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(9.5);
+//        verify(singleLink, times(12)).addTailPointer(anyInt());
+//
+//    }
 
     @Test
     public void should_return_first_even_element() {
@@ -97,37 +97,37 @@ public class ReduceTest {
         assertThat(reduce.getIndexOfFirstEven()).isEqualTo(3);
     }
 
-    @Test
-    public void should_return_last_even_element() {
-        //获取数组中最后一个奇数
-        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
-        List<Integer> arrayList = Arrays.asList(array);
-
-        Reduce reduce = new Reduce(arrayList);
-        assertThat(reduce.getLastOdd()).isEqualTo(15);
-    }
-
-    @Test
-    public void should_return_index_of_last_even_element() {
-        //获取数组中最后一个奇数的下标
-        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
-        List<Integer> arrayList = Arrays.asList(array);
-
-        Reduce reduce = new Reduce(arrayList);
-        assertThat(reduce.getIndexOfLastOdd()).isEqualTo(9);
-    }
-
-    @Test
-    public void can_judge_whether_is_equal() {
-        //判断两个数组是否相等
-        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
-        List<Integer> arrayList = Arrays.asList(array);
-
-        Integer[] differentArray = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1};
-        List<Integer> differentArrayList = Arrays.asList(differentArray);
-
-        Reduce reduce = new Reduce(arrayList);
-        assertThat(reduce.isEqual(arrayList)).isEqualTo(true);
-        assertThat(reduce.isEqual(differentArrayList)).isEqualTo(false);
-    }
+//    @Test
+//    public void should_return_last_even_element() {
+//        //获取数组中最后一个奇数
+//        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
+//        List<Integer> arrayList = Arrays.asList(array);
+//
+//        Reduce reduce = new Reduce(arrayList);
+//        assertThat(reduce.getLastOdd()).isEqualTo(15);
+//    }
+//
+//    @Test
+//    public void should_return_index_of_last_even_element() {
+//        //获取数组中最后一个奇数的下标
+//        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
+//        List<Integer> arrayList = Arrays.asList(array);
+//
+//        Reduce reduce = new Reduce(arrayList);
+//        assertThat(reduce.getIndexOfLastOdd()).isEqualTo(9);
+//    }
+//
+//    @Test
+//    public void can_judge_whether_is_equal() {
+//        //判断两个数组是否相等
+//        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
+//        List<Integer> arrayList = Arrays.asList(array);
+//
+//        Integer[] differentArray = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1};
+//        List<Integer> differentArrayList = Arrays.asList(differentArray);
+//
+//        Reduce reduce = new Reduce(arrayList);
+//        assertThat(reduce.isEqual(arrayList)).isEqualTo(true);
+//        assertThat(reduce.isEqual(differentArrayList)).isEqualTo(false);
+//    }
 }
