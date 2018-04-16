@@ -76,7 +76,7 @@ public class AddTest {
 
         Integer[] result = new Integer[]{12, 24, 36, 48, 60, 72, 84, 96, 108, 120};
         List<Integer> resultList = Arrays.asList(result);
-
+//        System.out.println(add.getProcessedList(arrayList));
         assertThat(add.getProcessedList(arrayList)).isEqualTo(resultList);
     }
 

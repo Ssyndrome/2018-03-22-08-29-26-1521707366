@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.stream.IntStream;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
@@ -48,15 +49,15 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        int res = 0;
-        int index = 0;
-        do{
-            if(arrayList.get(index)%2 == 0) {
-                res = 1;
-                index++;
-            }
-        }while(res == 0);
-        return index;
+//        int res = 0;
+//        int index = 0;
+//        do{
+//            if(arrayList.get(index)%2 == 0) {
+//                res = 1;
+//                index++;
+//            }
+//        }while(res == 1);
+        return IntStream.range(0,arrayList.size()).filter(i -> arrayList.get(i)%2 == 0).findFirst().getAsInt();
     }
 
     public boolean isEqual(List<Integer> arrayList_1) {
@@ -74,7 +75,9 @@ public class Reduce {
 
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        int len = arrayList.size();
+        return len%2 == 0? (singleLink.getNode(len/2)*1.0+singleLink.getNode(len/2+1)*1.0)/2
+                         :  singleLink.getNode(len/2)*1.0;
     }
 
     public int getLastOdd() {
